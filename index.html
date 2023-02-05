@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat+Alternates:ital,wght@1,500&family=Montserrat:ital,wght@0,700;1,400&family=Oswald:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <p>Enter your text or URL</p>
+        <input type="text" placeholder="Text or URL" id="qrText">
+        <div id="imgBox">
+            <img src="" id="img">
+        </div>
+        <button onclick="generateQR()"> Generate QR-code</button>
+    </div>
+    <script>
+        let imgBox = document.getElementById("imgBox")
+        let qrText = document.getElementById("qrText")
+        let qrImg = document.getElementById("qr-img")
+
+        function generateQR() {
+            qrImg.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrText.value;
+            imgBox.classList.add("Show-img");
+        }
+    </script>
+</body></html>
